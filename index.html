@@ -471,57 +471,80 @@
     </section>
 
     <!-- Products -->
-<section class="products" id="productos">
-    <div class="container">
-        <h2 class="section-title">Nuestros Productos</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-image">
-                    <i class="fas fa-id-badge"></i>
+    <section class="products" id="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-id-badge"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>Placa Individual</h3>
+                        <p class="product-description">Resina epoxica premium, resistente al agua, golpes y rayos UV. Incluye código QR único y activación ilimitada.</p>
+                        <div class="product-price">$30.000</div>
+                        <p style="font-size: 12px; color: #6c757d; margin-bottom: 15px;">✅ Entrega en 1-3 días hábiles</p>
+                        <button class="product-button" onclick="openWhatsApp('Individual')">
+                            <i class="fab fa-whatsapp"></i> Comprar Ahora
+                        </button>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3>Placa Individual</h3>
-                    <p class="product-description">Resina epoxica premium, resistente al agua, golpes y rayos UV. Incluye código QR único y activación ilimitada.</p>
-                    <div class="product-price">$30.000</div>
-                    <p style="font-size: 12px; color: #6c757d; margin-bottom: 15px;">✅ Entrega en 1-3 días hábiles</p>
-                    <button class="product-button" onclick="openWhatsApp('Individual')">
-                        <i class="fab fa-whatsapp"></i> Comprar Ahora
-                    </button>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>Paquete Familiar</h3>
+                        <p class="product-description">2 placas premium + descuento del 25%. Ideal para familias con múltiples mascotas.</p>
+                        <div class="product-price">$45.000</div>
+                        <p style="font-size: 12px; color: #6c757d; margin-bottom: 15px;">✅ Entrega en 1-3 días hábiles</p>
+                        <button class="product-button" onclick="openWhatsApp('Familiar')">
+                            <i class="fab fa-whatsapp"></i> Comprar Ahora
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Galería de Productos Real -->
-            <section class="gallery" style="padding: 60px 0; background: white;">
-                <div class="container">
-                    <h2 class="section-title">Así se ven nuestras placas</h2>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
-                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_2_j7pfy6.png" alt="Placa QR frontal" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407260/placa_yhrnhw.png" alt="Placa QR lateral" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_3_jrdolv.png" alt="Placa en collar" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    </div>
-                </div>
-            </section>
+    <!-- Galería de Productos Real -->
+    <section class="gallery" style="padding: 60px 0; background: white;">
+        <div class="container">
+            <h2 class="section-title">Así se ven nuestras placas</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+                <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_2_j7pfy6.png" 
+                    alt="Placa QR frontal" 
+                    style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407260/placa_yhrnhw.png" 
+                    alt="Placa QR lateral" 
+                    style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_3_jrdolv.png" 
+                    alt="Placa en collar" 
+                    style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
 
-            <!-- Proceso de Pedido -->
-            <section class="process" style="padding: 60px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
-                <div class="container">
-                    <h2 class="section-title">¿Cómo funciona?</h2>
-                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 40px; position: relative;">
-                        <div style="text-align: center; z-index: 1; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 180px; margin: 10px;">
-                            <div style="width: 50px; height: 50px; background: #2196F3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold;">1</div>
-                            <h3>Elige tu placa</h3>
-                        </div>
-                        <div style="text-align: center; z-index: 1; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 180px; margin: 10px;">
-                            <div style="width: 50px; height: 50px; background: #2196F3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold;">2</div>
-                            <h3>Contacta por WhatsApp</h3>
-                        </div>
-                        <div style="text-align: center; z-index: 1; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 180px; margin: 10px;">
-                            <div style="width: 50px; height: 50px; background: #2196F3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold;">3</div>
-                            <h3>Recibe en 1-3 días</h3>
-                        </div>
-                    </div>
+    <!-- Proceso de Pedido -->
+    <section class="process" style="padding: 60px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <h2 class="section-title">¿Cómo funciona?</h2>
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 40px; position: relative;">
+                <div style="text-align: center; z-index: 1; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 180px; margin: 10px;">
+                    <div style="width: 50px; height: 50px; background: #2196F3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold;">1</div>
+                    <h3>Elige tu placa</h3>
                 </div>
-            </section>
+                <div style="text-align: center; z-index: 1; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 180px; margin: 10px;">
+                    <div style="width: 50px; height: 50px; background: #2196F3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold;">2</div>
+                    <h3>Contacta por WhatsApp</h3>
+                </div>
+                <div style="text-align: center; z-index: 1; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 180px; margin: 10px;">
+                    <div style="width: 50px; height: 50px; background: #2196F3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold;">3</div>
+                    <h3>Recibe en 1-3 días</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
             <div class="product-card">
                 <div class="product-image">
@@ -588,7 +611,7 @@
                 <a href="https://wa.me/573116648551?text=Hola,%20quiero%20comprar%20placas%20QR%20para%20mi%20mascota" class="contact-btn whatsapp-btn" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
-                <a href="carlospalta91@hotmail.com" class="contact-btn">
+                <a href="mailto:carlospalta91@hotmail.com" class="contact-btn">
                     <i class="fas fa-envelope"></i> Email
                 </a>
             </div>
