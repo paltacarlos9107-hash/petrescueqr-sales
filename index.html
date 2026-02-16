@@ -152,6 +152,24 @@
             transform: translateY(-2px);
         }
 
+        .whatsapp-nav-btn {
+            background: #25D366;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .whatsapp-nav-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
         /* Hero Section */
         .hero {
             padding: 80px 0;
@@ -191,6 +209,16 @@
             transform: translateY(-4px);
             box-shadow: 0 12px 28px rgba(76, 175, 80, 0.6);
             background: #388E3C;
+        }
+
+        .whatsapp-cta {
+            background: #25D366 !important;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4) !important;
+        }
+
+        .whatsapp-cta:hover {
+            background: #128C7E !important;
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.6) !important;
         }
 
         /* Features */
@@ -302,7 +330,7 @@
         }
 
         .product-button {
-            background: var(--primary);
+            background: #25D366;
             color: white;
             border: none;
             padding: 12px 24px;
@@ -315,10 +343,11 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            font-size: 16px;
         }
 
         .product-button:hover {
-            background: #1976D2;
+            background: #128C7E;
             transform: scale(1.03);
         }
 
@@ -382,150 +411,24 @@
             background: white;
         }
 
-        /* Contact */
-        .contact {
-            padding: 80px 0;
+        /* Contact Section Simplificada */
+        .contact-simple {
+            padding: 100px 0;
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
             text-align: center;
         }
 
-        .contact h2 {
-            font-size: 36px;
+        .contact-simple h2 {
+            font-size: 42px;
             margin-bottom: 20px;
         }
 
-        .contact p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-
-        /* Form styles */
-        .form-card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            flex: 1;
-        }
-
-        .form-group.full-width {
-            flex: 100%;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--gray-800);
-            font-size: 14px;
-        }
-
-        .form-group label i {
-            color: var(--primary);
-            margin-right: 8px;
-            width: 20px;
-            text-align: center;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
-        }
-
-        .form-submit-btn {
-            background: linear-gradient(120deg, var(--success), #388E3C);
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .form-submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
-            background: linear-gradient(120deg, #388E3C, var(--success));
-        }
-
-        .contact-alternatives {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .contact-alternatives p {
-            color: white;
-            opacity: 0.9;
-            margin-bottom: 15px;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn {
-            background: white;
-            color: var(--primary);
-            padding: 16px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(255,255,255,0.3);
-        }
-
-        .whatsapp-btn {
-            background: #25D366;
-            color: white;
-        }
-
-        .whatsapp-btn:hover {
-            background: #128C7E;
+        .contact-simple p {
+            max-width: 650px;
+            margin: 0 auto 40px;
+            font-size: 20px;
+            opacity: 0.95;
         }
 
         /* Footer */
@@ -710,109 +613,38 @@
             border: none;
         }
 
-        /* Botón flotante WhatsApp */
+        /* Botón flotante WhatsApp - MÁS GRANDE Y VISIBLE */
         .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
             z-index: 9999;
             animation: pulse 2s infinite;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
         }
 
         .whatsapp-float a {
             background: #25D366;
             color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
+            padding: 16px 28px;
+            border-radius: 60px;
             text-decoration: none;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(37,211,102,0.4);
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 16px;
+            gap: 12px;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+        }
+
+        .whatsapp-float i {
+            font-size: 28px !important;
         }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
-            70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+            70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
             100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-        }
-
-        /* Popup de descuento */
-        #popup-descuento {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: none;
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .popup-content {
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #6c757d;
-        }
-
-        .popup-title {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 28px;
-        }
-
-        .popup-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .popup-form input {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        .popup-form button {
-            background: linear-gradient(135deg, #4CAF50, #388E3C);
-            color: white;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .popup-form button:hover {
-            background: linear-gradient(135deg, #388E3C, #4CAF50);
-        }
-
-        .popup-disclaimer {
-            margin-top: 15px;
-            font-size: 12px;
-            color: #999;
         }
 
         /* Responsive */
@@ -835,22 +667,16 @@
                 justify-content: center;
             }
             
-            .form-row {
-                flex-direction: column;
-                gap: 15px;
+            .contact-simple {
+                padding: 60px 20px;
             }
             
-            .form-card {
-                padding: 20px;
+            .contact-simple h2 {
+                font-size: 32px;
             }
             
-            .contact {
-                padding: 60px 0;
-            }
-            
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
+            .contact-simple p {
+                font-size: 18px;
             }
             
             .video-container iframe {
@@ -862,13 +688,17 @@
             }
             
             .whatsapp-float {
-                bottom: 15px;
-                right: 15px;
+                bottom: 20px;
+                right: 20px;
             }
             
             .whatsapp-float a {
-                padding: 12px 20px;
-                font-size: 14px;
+                padding: 14px 24px;
+                font-size: 16px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 24px !important;
             }
         }
     </style>
@@ -886,7 +716,9 @@
                     <a href="#productos">Productos</a>
                     <a href="#como-funciona">Cómo Funciona</a>
                     <a href="#testimonios">Testimonios</a>
-                    <a href="#contacto">Contacto</a>
+                    <a href="https://wa.me/573116648551?text=Hola,%20tengo%20una%20consulta" class="whatsapp-nav-btn">
+                        <i class="fab fa-whatsapp"></i> Contacto
+                    </a>
                     <a href="https://pet-rescue-qr-nro6.onrender.com/login" class="login-btn">
                         <i class="fas fa-user"></i> Iniciar Sesión
                     </a>
@@ -895,13 +727,13 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - BOTÓN AHORA ABRE WHATSAPP DIRECTAMENTE -->
     <section class="hero">
         <div class="container">
             <h1>🛡️ Placas Inteligentes que Salvan Vidas</h1>
             <p>Protege a tu mejor amigo con tecnología que lo devuelve a casa en minutos, no en semanas.</p>
-            <a href="#contacto" class="cta-button">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+            <a href="https://wa.me/573116648551?text=Hola,%20quiero%20comprar%20placas%20QR" class="cta-button whatsapp-cta">
+                <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
             </a>
         </div>
     </section>
@@ -960,7 +792,7 @@
         </div>
     </section>
 
-    <!-- Products -->
+    <!-- Products - BOTONES AHORA DICEN "PEDIR POR WHATSAPP" -->
     <section class="products" id="productos">
         <div class="container">
             <h2 class="section-title">Nuestros Productos</h2>
@@ -996,7 +828,7 @@
                             ✅ Activación ilimitada
                         </p>
                         <button class="product-button" onclick="openWhatsApp('Individual')">
-                            <i class="fab fa-whatsapp"></i> Comprar Ahora
+                            <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
                         </button>
                     </div>
                 </div>
@@ -1025,13 +857,30 @@
                             ✅ Perfecto para familias
                         </p>
                         <button class="product-button" onclick="openWhatsApp('Familiar')">
-                            <i class="fab fa-whatsapp"></i> Comprar Ahora
+                            <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
+
+    <!-- Video explicativo -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">Mira cómo funciona</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p style="margin-top: 20px; color: #6c757d; max-width: 600px; margin-left: auto; margin-right: auto;">
+                En solo 3 pasos tendrás a tu mascota protegida para siempre
+            </p>
+        </div>
+    </section>
 
     <!-- Galería de Productos Real -->
     <section class="gallery">
@@ -1189,78 +1038,14 @@
         </div>
     </section>
 
-    <!-- Contact -->
-    <section class="contact" id="contacto">
+    <!-- SECCIÓN DE CONTACTO SIMPLIFICADA - SOLO WHATSAPP -->
+    <section class="contact-simple" id="contacto">
         <div class="container">
             <h2>¿Listo para proteger a tu mascota?</h2>
-            <p>Completa el formulario y te contactaremos en menos de 1 hora.</p>
-            
-            <div class="form-card">
-                <form name="contacto" method="POST" data-netlify="true">
-                    <input type="hidden" name="form-name" value="contacto">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">
-                                <i class="fas fa-user"></i> Nombre completo *
-                            </label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Ej: Carlos Palta">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefono">
-                                <i class="fas fa-phone"></i> Teléfono *
-                            </label>
-                            <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 311 664 8551">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">
-                                <i class="fas fa-envelope"></i> Email (opcional)
-                            </label>
-                            <input type="email" id="email" name="email" placeholder="tu@email.com">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="mascota">
-                                <i class="fas fa-paw"></i> Tipo de mascota *
-                            </label>
-                            <select id="mascota" name="mascota" required>
-                                <option value="">Selecciona una opción</option>
-                                <option value="perro">Perro</option>
-                                <option value="gato">Gato</option>
-                                <option value="otro">Otro</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="mensaje">
-                            <i class="fas fa-comment"></i> Mensaje adicional
-                        </label>
-                        <textarea id="mensaje" name="mensaje" rows="4" 
-                                  placeholder="¿Cuántas placas necesitas? ¿Tienes preguntas sobre la entrega?"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="form-submit-btn">
-                        <i class="fas fa-paper-plane"></i> Enviar Pedido
-                    </button>
-                </form>
-            </div>
-            
-            <div class="contact-alternatives">
-                <p>O contáctanos directamente:</p>
-                <div class="contact-buttons">
-                    <a href="https://wa.me/573116648551?text=Hola,%20quiero%20comprar%20placas%20QR" 
-                       class="contact-btn whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="mailto:carlospalta91@hotmail.com" class="contact-btn">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                </div>
-            </div>
+            <p>Contáctanos por WhatsApp para hacer tu pedido. Te responderemos inmediatamente y coordinaremos la entrega en 1-3 días hábiles.</p>
+            <a href="https://wa.me/573116648551?text=Hola,%20quiero%20comprar%20placas%20QR" class="cta-button whatsapp-cta">
+                <i class="fab fa-whatsapp"></i> Chatear por WhatsApp
+            </a>
         </div>
     </section>
 
@@ -1272,143 +1057,44 @@
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/573116648551"><i class="fab fa-whatsapp"></i></a>
                 </div>
                 <p>Todos los derechos reservados</p>
             </div>
         </div>
     </footer>
 
-    <!-- Botón flotante WhatsApp -->
+    <!-- Botón flotante WhatsApp - MÁS GRANDE Y VISIBLE -->
     <div class="whatsapp-float">
         <a href="https://wa.me/573116648551?text=Hola,%20quiero%20comprar%20placas%20QR" target="_blank">
             <i class="fab fa-whatsapp"></i>
-            <span>¡Contáctanos ahora!</span>
+            <span>WhatsApp</span>
         </a>
     </div>
 
-   <!-- Popup de descuento - CORREGIDO -->
-<div id="popup-descuento">
-    <div class="popup-content">
-        <button class="popup-close" onclick="cerrarPopup()">&times;</button>
-        <h2 class="popup-title">🎁 ¡Obtén un 10% de descuento!</h2>
-        <p style="margin-bottom: 25px; color: #6c757d;">
-            Suscríbete y recibe tu código de descuento exclusivo
-        </p>
-        <!-- FORMULARIO CORREGIDO CON NETLIFY -->
-        <form id="form-popup" class="popup-form" name="popup-descuento" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="popup-descuento">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu email" required>
-            <button type="submit">¡Quiero mi descuento!</button>
-        </form>
-        <p class="popup-disclaimer">
-            No compartimos tu información. Cancela cuando quieras.
-        </p>
-    </div>
-</div>
-
     <script>
+        // Función para abrir WhatsApp con mensaje personalizado
         function openWhatsApp(product) {
             const message = `Hola, quiero comprar la placa ${product} para mi mascota.`;
             const url = `https://wa.me/573116648551?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         }
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling para enlaces internos (solo anclas #)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Popup de descuento
-        function cerrarPopup() {
-            document.getElementById('popup-descuento').style.display = 'none';
-        }
-
-        // Mostrar popup después de 30 segundos
-        setTimeout(() => {
-            if (!localStorage.getItem('popup-visto')) {
-                document.getElementById('popup-descuento').style.display = 'flex';
-                localStorage.setItem('popup-visto', 'true');
-            }
-        }, 30000);
-
-        // Detectar salida de página (mouse leave)
-        document.addEventListener('mouseleave', (e) => {
-            if (e.clientY < 0 && !localStorage.getItem('popup-visto')) {
-                document.getElementById('popup-descuento').style.display = 'flex';
-                localStorage.setItem('popup-visto', 'true');
-            }
-        });
-
-        // Popup de descuento - CORREGIDO CON ENVÍO REAL
-        document.getElementById('form-popup').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            formData.append('form-name', 'popup-descuento');
-            
-            try {
-                const response = await fetch('/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(formData).toString(),
-                });
-                
-                if (response.ok) {
-                    // Mensaje de éxito REAL
-                    alert('¡Éxito! 🎉\n\nTu código de descuento es: RESCATE10\n\nSe ha enviado a tu email con instrucciones detalladas. ¡Revisa tu bandeja de entrada!');
-                    cerrarPopup();
-                    e.target.reset();
-                    
-                    // Opcional: Enviar evento a Google Analytics
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'lead', {
-                            'event_category': 'popup',
-                            'event_label': 'descuento_10%'
+                // Solo aplicar a enlaces internos (no a WhatsApp)
+                if (!this.href.includes('wa.me')) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
                         });
                     }
-                } else {
-                    throw new Error('Error en el envío');
                 }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Hubo un problema al procesar tu solicitud. Por favor escríbenos directamente por WhatsApp.');
-            }
-        });
-
-        // Formulario de contacto - CORREGIDO
-        document.querySelector('form[name="contacto"]').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            formData.append('form-name', 'contacto');
-            
-            try {
-                const response = await fetch('/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(formData).toString(),
-                });
-                
-                if (response.ok) {
-                    alert('¡Gracias por tu mensaje! 🙌\n\nTe contactaremos en menos de 1 hora vía WhatsApp o email.');
-                    e.target.reset();
-                } else {
-                    throw new Error();
-                }
-            } catch (error) {
-                alert('Error al enviar. Por favor escríbenos directamente por WhatsApp: https://wa.me/573116648551');
-            }
+            });
         });
     </script>
 </body>
