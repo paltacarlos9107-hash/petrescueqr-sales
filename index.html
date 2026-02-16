@@ -1386,12 +1386,29 @@
             }
         });
 
-        // Formulario de contacto
-        document.querySelector('form[name="contacto"]').addEventListener('submit', function(e) {
+        // Formulario de contacto - CORREGIDO
+        document.querySelector('form[name="contacto"]').addEventListener('submit', async (e) => {
             e.preventDefault();
-            // Netlify Forms manejará el envío automáticamente
-            alert('¡Gracias por tu mensaje! Te contactaremos en menos de 1 hora.');
-            this.reset();
+            
+            const formData = new FormData(e.target);
+            formData.append('form-name', 'contacto');
+            
+            try {
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString(),
+                });
+                
+                if (response.ok) {
+                    alert('¡Gracias por tu mensaje! 🙌\n\nTe contactaremos en menos de 1 hora vía WhatsApp o email.');
+                    e.target.reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                alert('Error al enviar. Por favor escríbenos directamente por WhatsApp: https://wa.me/573116648551');
+            }
         });
     </script>
 </body>
