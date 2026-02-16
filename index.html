@@ -1287,24 +1287,26 @@
         </a>
     </div>
 
-    <!-- Popup de descuento -->
-    <div id="popup-descuento">
-        <div class="popup-content">
-            <button class="popup-close" onclick="cerrarPopup()">&times;</button>
-            <h2 class="popup-title">🎁 ¡Obtén un 10% de descuento!</h2>
-            <p style="margin-bottom: 25px; color: #6c757d;">
-                Suscríbete y recibe tu código de descuento exclusivo
-            </p>
-            <form id="form-popup" class="popup-form">
-                <input type="text" placeholder="Tu nombre" required>
-                <input type="email" placeholder="Tu email" required>
-                <button type="submit">¡Quiero mi descuento!</button>
-            </form>
-            <p class="popup-disclaimer">
-                No compartimos tu información. Cancela cuando quieras.
-            </p>
-        </div>
+   <!-- Popup de descuento - CORREGIDO -->
+<div id="popup-descuento">
+    <div class="popup-content">
+        <button class="popup-close" onclick="cerrarPopup()">&times;</button>
+        <h2 class="popup-title">🎁 ¡Obtén un 10% de descuento!</h2>
+        <p style="margin-bottom: 25px; color: #6c757d;">
+            Suscríbete y recibe tu código de descuento exclusivo
+        </p>
+        <!-- FORMULARIO CORREGIDO CON NETLIFY -->
+        <form id="form-popup" class="popup-form" name="popup-descuento" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="popup-descuento">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu email" required>
+            <button type="submit">¡Quiero mi descuento!</button>
+        </form>
+        <p class="popup-disclaimer">
+            No compartimos tu información. Cancela cuando quieras.
+        </p>
     </div>
+</div>
 
     <script>
         function openWhatsApp(product) {
@@ -1348,12 +1350,40 @@
             }
         });
 
-        // Formulario popup
-        document.getElementById('form-popup').addEventListener('submit', (e) => {
+        // Popup de descuento - CORREGIDO CON ENVÍO REAL
+        document.getElementById('form-popup').addEventListener('submit', async (e) => {
             e.preventDefault();
-            // Aquí puedes conectar con Formspree o tu backend
-            alert('¡Gracias! Tu código de descuento ha sido enviado a tu email.');
-            cerrarPopup();
+            
+            const formData = new FormData(e.target);
+            formData.append('form-name', 'popup-descuento');
+            
+            try {
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString(),
+                });
+                
+                if (response.ok) {
+                    // Mensaje de éxito REAL
+                    alert('¡Éxito! 🎉\n\nTu código de descuento es: RESCATE10\n\nSe ha enviado a tu email con instrucciones detalladas. ¡Revisa tu bandeja de entrada!');
+                    cerrarPopup();
+                    e.target.reset();
+                    
+                    // Opcional: Enviar evento a Google Analytics
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'lead', {
+                            'event_category': 'popup',
+                            'event_label': 'descuento_10%'
+                        });
+                    }
+                } else {
+                    throw new Error('Error en el envío');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Hubo un problema al procesar tu solicitud. Por favor escríbenos directamente por WhatsApp.');
+            }
         });
 
         // Formulario de contacto
