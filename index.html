@@ -701,6 +701,77 @@
                 font-size: 24px !important;
             }
         }
+            /* ===== CARRUSEL DE GALERÍA AUTOMÁTICO ===== */
+            .gallery-carousel {
+                display: flex;
+                gap: 20px;
+                animation: scrollGallery 30s linear infinite;
+                width: max-content;
+                min-width: 100%;
+            }
+
+            .gallery-carousel:hover {
+                animation-play-state: paused;
+            }
+
+            @keyframes scrollGallery {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+
+            .gallery-track {
+                display: flex;
+                gap: 20px;
+                animation: scrollGallery 30s linear infinite;
+            }
+
+            .gallery-track-duplicate {
+                animation: scrollGallery 30s linear infinite;
+                animation-delay: -15s;
+            }
+
+            .gallery-item {
+                width: 280px;
+                height: 280px;
+                object-fit: contain;
+                background: white;
+                border-radius: 16px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+                padding: 20px;
+                transition: var(--transition);
+                cursor: pointer;
+            }
+
+            .gallery-item:hover {
+                transform: translateY(-8px) scale(1.05);
+                box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+                z-index: 10;
+            }
+
+            /* Versión móvil */
+            @media (max-width: 768px) {
+                .gallery-item {
+                    width: 220px;
+                    height: 220px;
+                }
+                
+                @keyframes scrollGallery {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+            }
+
+            @media (max-width: 480px) {
+                .gallery-item {
+                    width: 180px;
+                    height: 180px;
+                    padding: 15px;
+                }
+                
+                .gallery-carousel {
+                    gap: 15px;
+                }
+            }
     </style>
 </head>
 <body>
@@ -865,20 +936,71 @@
         </div>
     </section> 
 
-    <!-- Galería de Productos Real -->
+    <!-- Galería de Productos Real - CARRUSEL AUTOMÁTICO -->
     <section class="gallery">
         <div class="container">
             <h2 class="section-title">Así se ven nuestras placas</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
-                <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_2_j7pfy6.png" 
-                     alt="Placa QR frontal" 
-                     style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407260/placa_yhrnhw.png" 
-                     alt="Placa QR lateral" 
-                     style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_3_jrdolv.png" 
-                     alt="Placa en collar" 
-                     style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: #6c757d; font-size: 18px;">
+                Placas premium en resina epóxica - Resistente al agua, golpes y rayos UV
+            </p>
+            
+            <!-- Carrusel automático infinito -->
+            <div style="overflow: hidden; position: relative; padding: 20px 0;">
+                <div class="gallery-carousel">
+                    <!-- Primera fila - visible -->
+                    <div class="gallery-track">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_2_j7pfy6.png" 
+                            alt="Placa QR frontal" 
+                            class="gallery-item">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407260/placa_yhrnhw.png" 
+                            alt="Placa QR lateral" 
+                            class="gallery-item">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_3_jrdolv.png" 
+                            alt="Placa en collar" 
+                            class="gallery-item">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_2_j7pfy6.png" 
+                            alt="Placa QR vista superior" 
+                            class="gallery-item">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407260/placa_yhrnhw.png" 
+                            alt="Placa QR en acción" 
+                            class="gallery-item">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_3_jrdolv.png" 
+                            alt="Placa QR detalle" 
+                            class="gallery-item">
+                    </div>
+                    
+                    <!-- Segunda fila - duplicada para efecto infinito -->
+                    <div class="gallery-track gallery-track-duplicate">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_2_j7pfy6.png" 
+                            alt="Placa QR frontal" 
+                            class="gallery-item">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407260/placa_yhrnhw.png" 
+                            alt="Placa QR lateral" 
+                            class="gallery-item">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_3_jrdolv.png" 
+                            alt="Placa en collar" 
+                            class="gallery-item">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_2_j7pfy6.png" 
+                            alt="Placa QR vista superior" 
+                            class="gallery-item">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407260/placa_yhrnhw.png" 
+                            alt="Placa QR en acción" 
+                            class="gallery-item">
+                        <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770407578/placa_3_jrdolv.png" 
+                            alt="Placa QR detalle" 
+                            class="gallery-item">
+                    </div>
+                </div>
+                
+                <!-- Controles opcionales -->
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://wa.me/573116648551?text=Hola,%20quiero%20ver%20más%20fotos%20de%20las%20placas" 
+                    style="background: #25D366; color: white; padding: 12px 30px; border-radius: 50px; 
+                            text-decoration: none; font-weight: 700; display: inline-flex; 
+                            align-items: center; gap: 10px; box-shadow: 0 4px 12px rgba(37,211,102,0.3);">
+                        <i class="fab fa-whatsapp"></i> Ver más fotos por WhatsApp
+                    </a>
+                </div>
             </div>
         </div>
     </section>
