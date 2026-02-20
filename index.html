@@ -772,10 +772,136 @@
                     gap: 15px;
                 }
             }
+
+            /* ===== MENÚ HAMBURGUESA PARA MÓVIL ===== */
+            .hamburger {
+                display: none; /* Oculto en desktop */
+                flex-direction: column;
+                justify-content: space-around;
+                width: 30px;
+                height: 24px;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                z-index: 1001;
+                outline: none;
+            }
+
+            .hamburger span {
+                width: 100%;
+                height: 3px;
+                background: var(--gray-800);
+                border-radius: 3px;
+                transition: var(--transition);
+            }
+
+            /* Menú de navegación - versión móvil */
+            #nav-menu {
+                display: flex;
+                gap: 24px;
+                align-items: center;
+            }
+
+            /* Estilos para versión móvil */
+            @media (max-width: 768px) {
+                .hamburger {
+                    display: flex;
+                }
+                
+                .nav-links {
+                    position: fixed;
+                    top: 80px;
+                    right: -100%;
+                    flex-direction: column;
+                    background: white;
+                    width: 80%;
+                    height: calc(100vh - 80px);
+                    padding: 40px 30px;
+                    transition: var(--transition);
+                    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                    z-index: 1000;
+                    gap: 25px;
+                    align-items: flex-start;
+                }
+                
+                .nav-links.active {
+                    right: 0;
+                }
+                
+                .nav-links a {
+                    width: 100%;
+                    padding: 12px 0;
+                    border-bottom: 1px solid var(--gray-200);
+                    color: var(--gray-800);
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: var(--transition);
+                    font-size: 18px;
+                }
+                
+                .nav-links a:hover {
+                    color: var(--primary);
+                    padding-left: 10px;
+                }
+                
+                .whatsapp-nav-btn,
+                .login-btn {
+                    width: 100%;
+                    justify-content: center;
+                    padding: 14px;
+                    font-size: 16px;
+                    margin-top: 10px;
+                }
+                
+                .whatsapp-nav-btn {
+                    background: #25D366;
+                    color: white;
+                    border-radius: 8px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                }
+                
+                .login-btn {
+                    background: var(--primary);
+                    color: white;
+                    border-radius: 8px;
+                    text-align: center;
+                }
+                
+                /* Animación del botón hamburguesa al abrir */
+                .hamburger.active span:nth-child(1) {
+                    transform: rotate(45deg) translate(5px, 5px);
+                }
+                
+                .hamburger.active span:nth-child(2) {
+                    opacity: 0;
+                }
+                
+                .hamburger.active span:nth-child(3) {
+                    transform: rotate(-45deg) translate(5px, -5px);
+                }
+                
+                /* Navbar en móvil */
+                .navbar {
+                    padding: 15px 0;
+                }
+                
+                .logo h1 {
+                    font-size: 20px;
+                }
+                
+                .logo img {
+                    width: 100px;
+                }
+            }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header - CON MENÚ HAMBURGUESA PARA MÓVIL -->
     <header>
         <div class="container">
             <nav class="navbar">
@@ -783,15 +909,24 @@
                     <img src="https://res.cloudinary.com/dvwvcc41m/image/upload/v1770246035/logo_lyo3kh.png" alt="Pet Rescue QR Logo">
                     <h1>Pet Rescue QR</h1>
                 </div>
-                <div class="nav-links">
+                
+                <!-- Botón menú hamburguesa (solo móvil) -->
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Menú de navegación -->
+                <div class="nav-links" id="nav-menu">
                     <a href="#productos">Productos</a>
                     <a href="#como-funciona">Cómo Funciona</a>
                     <a href="#testimonios">Testimonios</a>
                     <a href="https://wa.me/573116648551?text=Hola,%20tengo%20una%20consulta" class="whatsapp-nav-btn">
                         <i class="fab fa-whatsapp"></i> Contacto
                     </a>
-                    <a href="https://pet-rescue-qr-nro6.onrender.com/qr-login" class="login-btn">
-                        <i class="fas fa-user"></i> Acceder a Mis Mascotas
+                    <a href="https://pet-rescue-qr-nro6.onrender.com/login" class="login-btn">
+                        <i class="fas fa-user"></i> Iniciar Sesión
                     </a>
                 </div>
             </nav>
@@ -1237,6 +1372,33 @@
                     }
                 }
             });
+        });
+        // ===== MENÚ HAMBURGUESA PARA MÓVIL =====
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Toggle menú al hacer clic en hamburguesa
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Cerrar menú al hacer clic fuera del menú (en móviles)
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            }
         });
     </script>
 </body>
